@@ -286,7 +286,7 @@ export default function HospitalExperience() {
   useEffect(() => {
     if (!report) { setReportQr(""); return; }
     const base = typeof window === "undefined" ? "https://rana-medical.example" : window.location.origin;
-    QRCode.toDataURL(`${base}/#lab-reports?reference=${encodeURIComponent(report.reference)}`, { width: 156, margin: 1, color: { dark: "#123d41", light: "#ffffff" } }).then(setReportQr).catch(() => setReportQr(""));
+    QRCode.toDataURL(`${base}/#lab-reports?reference=${encodeURIComponent(report.reference)}`, { width: 156, margin: 1, color: { dark: "#0f3527", light: "#ffffff" } }).then(setReportQr).catch(() => setReportQr(""));
   }, [report]);
 
   const doctorsForDepartment = useMemo(() => content.doctors.filter((doctor) => {
@@ -382,9 +382,9 @@ export default function HospitalExperience() {
         <div className="hero-grain" />
         <div className="shell hero-grid">
           <motion.div className="hero-copy" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: [.22, 1, .36, 1] }}>
-            <div className="eyebrow hero-eyebrow"><span className="eyebrow-icon"><Sparkles size={14} /></span> A NEW STANDARD OF CARE <span className="eyebrow-rule" /></div>
-            <h1>Compassionate Care,<br /><em>Advanced Medical</em><br />Excellence.</h1>
-            <p className="hero-lede">Your health deserves expert attention, modern diagnostics and compassionate treatment. Experience trusted healthcare at Rana Medical Hospital.</p>
+            <div className="eyebrow hero-eyebrow"><span className="eyebrow-icon"><Sparkles size={14} /></span> THE CLARITY STANDARD <span className="eyebrow-rule" /></div>
+            <h1>Precision care,<br /><em>delivered with grace.</em></h1>
+            <p className="hero-lede">A hospital built on measured medicine — specialist attention, modern diagnostics and a calm, deliberate way of working.</p>
             <div className="hero-actions"><a className="button button-primary" href="#appointment">Book online appointment <ArrowUpRight size={17} /></a><a className="button button-light" href="https://wa.me/923246627054" target="_blank" rel="noreferrer"><Phone size={16} /> WhatsApp emergency</a></div>
             <a className="hero-explore" href="#services"><span className="explore-mark"><ArrowDownRight size={17} /></span> Explore our services</a>
             <div className="hero-trust"><span><i><Clock3 size={15} /></i> 24/7 Emergency*</span><span><i><Stethoscope size={15} /></i> Specialist care</span><span><i><FileCheck2 size={15} /></i> Digital records</span></div>
